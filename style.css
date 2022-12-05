@@ -1,0 +1,392 @@
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+
+:root {
+    --white: #fff;
+    --black: #1c2b2d;
+    --purple: #2D033B;
+    --light-blue: #005490;
+    --color-primary: #0015C5;
+    --color-sec: #db6400;
+    --color-grey: #eee;
+    --color-dark-grey: #222831;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    max-width: 100vw;
+    font-family: nunito;
+}
+
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* Start here */
+.main-container{
+    display: flex;
+    justify-content: center;
+}
+.instructions{
+    font-size: 1.6rem;
+    width: 30%;
+    height: 100vh;
+    background-color: var(--purple);
+    padding: 5rem;
+    color: #eee;
+}
+.instructions h2 {
+    font-size: 3.5rem;
+    color: #FF7000;
+    margin-bottom:1rem ;
+    position: relative;
+}
+.instructions h2::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom:0 ;
+    width: 25%;
+    height: 2px;
+    background-color: #eee;
+    
+}
+.instructions ol{
+    padding: 2rem 0  0 1.5rem;
+
+}
+.instructions a {
+    color: #FF7000;
+    text-decoration: none;
+}
+.down-link{
+    width: 70%;
+    padding-top: 5rem;
+}
+.down-link section{
+    border: 2px solid var(--purple);
+    border: radius 0 0 5px 5px;
+}
+main h1 {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 5rem;
+    color: var(--purple);
+}
+main input[type=radio]{
+    display: none;
+
+}
+main nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #eee;
+    padding: 5px;
+    background-color: var(--color-grey);
+    z-index:1 ;
+    position: relative;
+}
+ nav label{
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 1rem;
+    position: relative;
+    color: var(--color-dark-grey);
+    cursor: pointer;
+}
+ nav label i {
+    padding: 5px;
+    color: #FF7000;
+}
+ nav label i {
+    padding-right: 5px;
+    color: #FF7000;
+}
+.slide{
+    position: absolute;
+    top: 0;
+    left: 3%;
+    width: 26%;
+    height: 100%;
+    background-color: #2D033B;
+    z-index:-1;
+    color: #eee;
+}
+#register:checked ~ nav .slide{
+    left: 31%;
+}
+#reset:checked ~ nav .slide{
+    left: 66%;
+}
+#login:checked ~ nav label.login,
+#register:checked ~ nav label.register,
+#reset:checked ~ nav label.reset{
+    color: #fff;
+}
+.content {
+    display: none;
+}
+#login:checked ~ section .content-link{
+
+     display: block;
+}
+#register:checked ~ section .content-audio{
+     display: block;
+} 
+ #reset:checked ~ section .content-video{
+     display: block;
+}
+section .content{
+    margin:  auto;
+    text-align: center;
+}
+.content > i{
+    font-size: 3rem;
+    color: var(--purple);
+    border: 2px solid;
+    padding: 8px;
+    border-radius: 5rem;
+}
+.content h2 {
+    font-size: 2rem;
+    line-height: 2;
+    padding: 0 1rem;
+    position: relative;
+
+}
+.content p {
+    padding-bottom: 1rem;
+}
+.content form{
+ width: 70%;
+ margin:  auto;
+ display: flex;
+ flex-direction: column;
+
+}
+.content form label{
+    position: relative;
+    margin:0 auto;
+    width: 100%;
+}
+.content form label input {
+    display: block;
+    width: 100%;
+    padding: 1.3rem 3rem;
+    border-radius: 10px 0 10px 0;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid rgba(0, 0, 0, .4);
+    background-color:rgba(0, 0, 0, .1) ;
+    outline: none;
+    color: var(--color-dark-grey);
+    transition: all .3s;
+
+}
+.content form label input:focus:invalid{
+font-size: 1.6rem;
+border-bottom: 2px solid #FF7000;
+}
+.content form label input:focus:valid{
+    font-size: 1.6rem;
+border-bottom: 2px solid green;
+background-color: #E8F0FE;
+}
+.content form i {
+    position: absolute;
+    left: 1rem;
+    top: 1.5rem;
+    font-size: 1.3rem;
+    color: var(--purple);
+
+}
+::placeholder{
+    font-size: 1.6rem;
+    color: var(--color-dark-grey);
+}
+.content .btn{
+    padding: 1.2rem;
+    font-size: 1.6rem;
+    background-color: var(--purple);
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    transition: all .3s;
+
+
+}
+.content .btn:hover{
+    background-color: #4e0566;
+}
+.embed-code{
+    position: relative;
+    font-size: 1.6rem;
+}
+.content form  textarea{
+    width: 100%;
+    height: 10rem;
+    outline: none;
+    font-size: 1.6rem;
+    font-family: inherit;
+}
+.embed-code span {
+    position: absolute;
+    right: 1px;
+    bottom: 5px;
+    font-weight: 700;
+    background-color: var(--purple);
+    color: #fff;
+    padding: 5px 8px;
+    border: 1px solid #eee;
+    cursor: pointer;
+    transition: all .3s;
+
+}
+.embed-code span:hover{
+    font-size: 1.8rem;
+
+}
+/* Tablets */
+@media screen and (max-width:899px){
+    .main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} 
+.instructions{
+    font-size: 2rem;
+    width: 100%;
+    height: 80vh;
+    background-color: var(--purple);
+    padding: 5rem;
+    color: #eee;
+}
+
+.instructions ol li{
+    padding-bottom: 2rem;
+    
+}
+.instructions h2 {
+    margin-top: 3rem;
+    font-size: 4rem;
+}
+
+.instructions p{
+    font-size: 2rem;
+}
+.instructions ol li p {
+    font-size: 2rem;
+}
+.down-link{
+    width: 100%;
+}
+main h1 {
+    display: inline;
+
+    font-size: 2rem;
+    width: 100%;
+    font-weight: 900;
+    line-height: 5rem;
+    color: var(--purple);
+    margin-bottom: 4rem;
+}
+nav{
+    width: 100%;
+}
+.slide{
+    width: 30%;
+}
+ nav i{
+    font-size: 2rem;
+ }
+nav label{
+    font-size: 2rem;
+    display: inline;
+}
+.content i {
+    margin: 1rem;
+}
+}
+/* Small Screens */
+@media screen and (max-width:600px) {
+    .main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.instructions{
+    font-size: 2rem;
+    width: 100%;
+    height: 80vh;
+    background-color: var(--purple);
+    padding: 5rem;
+    color: #eee;
+}
+
+.instructions ol li{
+    padding-bottom: 2rem;
+    
+}
+.instructions h2 {
+    margin-top: 3rem;
+    font-size: 4rem;
+}
+
+.instructions p{
+    font-size: 2rem;
+}
+.instructions ol li p {
+    font-size: 2rem;
+}
+.down-link{
+    width: 100%;
+}
+main h1 {
+    display: inline;
+
+    font-size: 2rem;
+    width: 100%;
+    font-weight: 900;
+    line-height: 5rem;
+    color: var(--purple);
+    margin-bottom: 4rem;
+}
+nav{
+    width: 100%;
+}
+.slide{
+    width: 30%;
+}
+ nav i{
+    font-size: 1rem;
+ }
+nav label{
+    font-size: 1rem;
+    display: inline;
+}
+.content i {
+    margin: 1rem;
+}
+}
